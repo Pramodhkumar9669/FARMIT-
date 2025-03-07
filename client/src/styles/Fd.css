@@ -1,0 +1,97 @@
+/* Dashboard Container */
+.investor-dashboard {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in the first row */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Responsive Grid for 4 in 1st row and 3 in 2nd */
+.dashboard-grid .dashboard-card:nth-child(n+5) {
+    grid-column: span 1;
+}
+
+/* Dashboard Card */
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-card:hover {
+    background: rgba(255, 255, 255, 0.69);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.44);
+}
+
+/* Card Content */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Icon */
+.icon {
+    font-size: 30px;
+}
+
+/* Card Title */
+.dashboard-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Card Description */
+.dashboard-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 in one row */
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row for tablets */
+    }
+}
+
+@media (max-width: 500px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(1, 1fr); /* Stack in one column for mobile */
+    }
+}
